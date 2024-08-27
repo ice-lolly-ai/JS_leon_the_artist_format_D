@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Infinite Content Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        #output {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transition: left 30s linear;
+        }
+        .content-container img, .content-container iframe {
+            margin: 0 10px;
+        }
+        .history {
+            margin-top: 30px;
+            font-size: 18px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+        #textInput {
+            margin-top: 20px;
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        #triggerButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speak or Type to See Infinite Content!</h1>
+    <button onclick="startRecognition()">Start Voice Recognition</button>
+    <input type="text" id="textInput" placeholder="Type a word here...">
+    <button id="triggerButton" onclick="handleTextInput()">Go</button>
+    <div id="output"></div>
+    <div id="history" class="history"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
